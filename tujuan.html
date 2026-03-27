@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tujuan - LENTERA BELAJAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sub-header { background: var(--primary-dark); padding: 20px 2rem; display: flex; align-items: center; gap: 20px; color: white; border-bottom: 4px solid var(--accent-glow); }
+        .back-btn { color: white; font-size: 1.2rem; transition: color 0.3s; }
+        .back-btn:hover { color: var(--accent-glow); }
+        .page-content { padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; }
+        .goal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 2rem; }
+        .goal-card { background: white; padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow-subtle); border-top: 5px solid var(--primary-dark); transition: transform 0.3s; }
+        .goal-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-premium); }
+        .goal-icon { font-size: 2.5rem; color: var(--accent-glow); margin-bottom: 1.5rem; }
+        .goal-title { font-family: 'Poppins', sans-serif; font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 1rem; }
+        .goal-desc { color: #64748b; line-height: 1.7; font-size: 0.95rem; }
+    </style>
+</head>
+<body style="background-color: var(--bg-light);">
+
+    <header class="sub-header">
+        <a href="dashboard.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem;">Tujuan Pembelajaran</h2>
+    </header>
+
+    <main class="page-content">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="color: var(--primary-dark); font-family: 'Poppins', sans-serif; font-size: 2.5rem; margin-bottom: 1rem;">Visi & Target Kompetensi</h1>
+            <p style="color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.6;">Melalui platform PERSIKOS, kami bertujuan membentuk generasi yang memiliki literasi sosial tinggi dan mampu menjadi agen perdamaian di tengah masyarakat.</p>
+        </div>
+
+        <div class="goal-grid">
+            <div class="goal-card">
+                <i class="fas fa-brain goal-icon"></i>
+                <h3 class="goal-title">1. Pemahaman Konseptual</h3>
+                <p class="goal-desc">Siswa mampu mengidentifikasi, mendefinisikan, dan memahami akar penyebab terjadinya konflik sosial di masyarakat secara objektif dan sosiologis.</p>
+            </div>
+            <div class="goal-card" style="border-top-color: var(--accent-glow);">
+                <i class="fas fa-search-location goal-icon"></i>
+                <h3 class="goal-title">2. Analisis Kasus Nyata</h3>
+                <p class="goal-desc">Siswa dapat membedah berbagai studi kasus konflik di Indonesia, memetakan aktor yang terlibat, serta menganalisis dampaknya terhadap integrasi bangsa.</p>
+            </div>
+            <div class="goal-card" style="border-top-color: #0D9488;">
+                <i class="fas fa-handshake goal-icon"></i>
+                <h3 class="goal-title">3. Resolusi & Empati</h3>
+                <p class="goal-desc">Membekali siswa dengan keterampilan mediasi, negosiasi, dan menumbuhkan sikap empati untuk merumuskan solusi damai atas perbedaan yang ada.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+/* style.css - PREMIUM THEME */
+
+/* === GLOBAL STYLES === */
+:root {
+    --primary-dark: #0F172A; /* Deep Navy */
+    --secondary-blue: #334155; /* Slate Blue */
+    --accent-glow: #F59E0B; /* Golden Amber - Lantern Effect */
+    --text-on-dark: #F9FAFB; /* Light Gray */
+    --text-on-light: #1A202C; /* Dark Gray */
+    --bg-light: #F9FAFB; /* Off-white for content areas */
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-premium: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Inter', sans-serif; /* Premium modern font pair */
+    background-color: var(--primary-dark);
+    color: var(--text-on-light);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+/* === SHARED COMPONENTS === */
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--accent-glow);
+    text-transform: uppercase;
+}
+
+/* === SECTION: LOGIN PAGE === */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-dark), #1A1A1A);
+}
+
+.login-card {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-premium);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-header {
+    margin-bottom: 2.5rem;
+}
+
+.login-logo {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.input-field {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.input-field:focus {
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-dark);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(15, 23, 42, 0.2);
+}
+
+.login-btn:hover {
+    background-color: #1E293B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(15, 23, 42, 0.25);
+}
+
+.forgot-password {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 1rem;
+    display: block;
+}
+
+.forgot-password:hover {
+    color: var(--accent-glow);
+}
+
+
+/* === SECTION: DASHBOARD (Based on image_8 structure) === */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Profil */
+.header {
+    background-color: var(--primary-dark);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.profil-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-on-dark);
+}
+
+.profil-name {
+    text-align: right;
+}
+
+.profil-name h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.profil-name p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.profil-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255,255,255,0.05);
+}
+
+/* Banner Header (Replacement for Flat Illustration) */
+.banner {
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), 
+                url('path-to-high-end-study-banner.jpg') center/cover; /* Improvisasi: Use professional photo */
+    color: var(--text-on-dark);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-glow);
+}
+
+.banner h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Personalized Welcome Message */
+.welcome-msg {
+    color: var(--accent-glow);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+/* Premium Icon Navigation (Core Overhaul) */
+.premium-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Subtle spacing */
+    background-color: white; /* Clean content background */
+    padding: 2.5rem 1rem;
+    box-shadow: var(--shadow-subtle);
+}
+
+.nav-item {
+    flex: 1;
+    max-width: 180px;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #E2E8F0;
+    background-color: white;
+}
+
+.nav-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-premium);
+    border-color: var(--accent-glow);
+}
+
+.nav-icon {
+    font-size: 2.5rem;
+    /* Use refined icons or premium SVG icons */
+    /* Cartoon icons are replaced with refined line-art icons or subtle glowing SVG */
+}
+
+/* Specific icon styles to mimic high-end line-art or subtle glow */
+/* Example placeholder style for icons in modern edu portals */
+.nav-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-dark);
+}
+
+.nav-item:hover .nav-icon-wrapper {
+    color: var(--accent-glow);
+    /* Subtle 'lantern light' effect on hover */
+    filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.4)); 
+}
+
+.nav-text-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.nav-subtitle {
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+/* Added Professional Features Section */
+.content-preview-area {
+    background-color: var(--bg-light);
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.preview-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.preview-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.preview-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.preview-btn {
+    font-size: 0.8rem;
+    color: var(--accent-glow);
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: auto;
+}

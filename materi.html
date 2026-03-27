@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi - LENTERA BELAJAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sub-header { background: var(--primary-dark); padding: 20px 2rem; display: flex; align-items: center; gap: 20px; color: white; border-bottom: 4px solid var(--accent-glow); }
+        .back-btn { color: white; font-size: 1.2rem; transition: color 0.3s; }
+        .back-btn:hover { color: var(--accent-glow); }
+        .page-content { padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+        
+        .module-list { display: flex; flex-direction: column; gap: 20px; }
+        .module-card { background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow-subtle); display: flex; justify-content: space-between; align-items: center; border: 1px solid #E2E8F0; transition: border-color 0.3s; }
+        .module-card:hover { border-color: var(--accent-glow); }
+        
+        .module-info h3 { color: var(--primary-dark); font-family: 'Poppins', sans-serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .module-info p { color: #64748b; font-size: 0.9rem; margin-bottom: 1rem; }
+        .module-tags span { background: #F1F5F9; color: #475569; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; font-weight: 600; margin-right: 10px; }
+        
+        .module-action { display: flex; flex-direction: column; align-items: flex-end; gap: 15px; min-width: 150px; }
+        .btn-read { background: var(--primary-dark); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s; text-align: center; width: 100%; }
+        .btn-read:hover { background: var(--accent-glow); color: var(--primary-dark); }
+        .progress-container { width: 100%; background: #E2E8F0; border-radius: 10px; height: 8px; overflow: hidden; }
+        .progress-bar { height: 100%; background: var(--accent-glow); }
+    </style>
+</head>
+<body style="background-color: var(--bg-light);">
+
+    <header class="sub-header">
+        <a href="dashboard.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem;">Modul Materi</h2>
+    </header>
+
+    <main class="page-content">
+        <div class="module-list">
+            
+            <div class="module-card">
+                <div class="module-info">
+                    <h3>Bab 1: Hakikat Konflik Sosial</h3>
+                    <p>Pengenalan dasar, definisi, dan faktor-faktor pemicu konflik di masyarakat.</p>
+                    <div class="module-tags">
+                        <span><i class="far fa-file-pdf"></i> PDF</span>
+                        <span><i class="far fa-clock"></i> 45 Menit</span>
+                    </div>
+                </div>
+                <div class="module-action">
+                    <div style="width: 100%; text-align: right; font-size: 0.8rem; font-weight: bold; color: #10B981;">100% Selesai</div>
+                    <div class="progress-container"><div class="progress-bar" style="width: 100%; background: #10B981;"></div></div>
+                    <a href="#" class="btn-read" style="background: #F1F5F9; color: var(--primary-dark);">Baca Ulang</a>
+                </div>
+            </div>
+
+            <div class="module-card">
+                <div class="module-info">
+                    <h3>Bab 2: Peta Konflik Indonesia</h3>
+                    <p>Studi kasus nyata berbagai konflik sosial dan etnis yang pernah terjadi di nusantara.</p>
+                    <div class="module-tags">
+                        <span><i class="far fa-file-alt"></i> Interaktif</span>
+                        <span><i class="far fa-clock"></i> 60 Menit</span>
+                    </div>
+                </div>
+                <div class="module-action">
+                    <div style="width: 100%; text-align: right; font-size: 0.8rem; font-weight: bold; color: var(--accent-glow);">50% Berjalan</div>
+                    <div class="progress-container"><div class="progress-bar" style="width: 50%;"></div></div>
+                    <a href="#" class="btn-read">Lanjutkan Baca</a>
+                </div>
+            </div>
+
+            <div class="module-card" style="opacity: 0.7;">
+                <div class="module-info">
+                    <h3>Bab 3: Manajemen & Resolusi</h3>
+                    <p>Langkah-langkah strategis, mediasi, dan membangun kembali integrasi sosial yang retak.</p>
+                    <div class="module-tags">
+                        <span><i class="fas fa-lock"></i> Terkunci</span>
+                    </div>
+                </div>
+                <div class="module-action">
+                    <div style="width: 100%; text-align: right; font-size: 0.8rem; font-weight: bold; color: #94A3B8;">0%</div>
+                    <div class="progress-container"><div class="progress-bar" style="width: 0%;"></div></div>
+                    <button class="btn-read" style="background: #CBD5E1; cursor: not-allowed;" disabled>Selesaikan Bab 2</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

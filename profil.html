@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - LENTERA BELAJAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sub-header { background: var(--primary-dark); padding: 20px 2rem; display: flex; align-items: center; gap: 20px; color: white; border-bottom: 4px solid var(--accent-glow); }
+        .back-btn { color: white; font-size: 1.2rem; transition: color 0.3s; }
+        .back-btn:hover { color: var(--accent-glow); }
+        .page-content { padding: 3rem 2rem; max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 30px; }
+        
+        .profile-card { background: white; padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow-subtle); text-align: center; border: 1px solid #E2E8F0; }
+        .avatar-large { width: 120px; height: 120px; background: #F1F5F9; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 1.5rem; font-size: 3rem; color: var(--primary-dark); border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .student-name { font-family: 'Poppins', sans-serif; font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 5px; }
+        .student-id { color: #64748b; font-size: 0.9rem; margin-bottom: 15px; }
+        .btn-edit { background: white; border: 1px solid var(--primary-dark); color: var(--primary-dark); padding: 8px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-top: 10px; }
+        .btn-edit:hover { background: var(--primary-dark); color: white; }
+
+        .stats-card { background: white; padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow-subtle); border: 1px solid #E2E8F0; }
+        .stats-title { font-family: 'Poppins', sans-serif; font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 1.5rem; border-bottom: 2px solid #F1F5F9; padding-bottom: 10px; }
+        
+        .stat-item { margin-bottom: 1.5rem; }
+        .stat-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; color: #475569; font-size: 0.95rem; }
+        .progress-container { width: 100%; background: #E2E8F0; border-radius: 10px; height: 10px; overflow: hidden; }
+        .progress-bar { height: 100%; background: var(--primary-dark); border-radius: 10px; }
+        
+        /* Gaya Khusus untuk Kolom Edit Profil */
+        .edit-input { width: 80%; padding: 10px; margin-bottom: 10px; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.95rem; text-align: center; }
+        .edit-input:focus { outline: none; border-color: var(--accent-glow); box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2); }
+
+        @media (max-width: 768px) {
+            .page-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body style="background-color: var(--bg-light);">
+
+    <header class="sub-header">
+        <a href="dashboard.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem;">Profil Siswa</h2>
+    </header>
+
+    <main class="page-content">
+        <div class="profile-card">
+            <div class="avatar-large">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            
+            <div id="displayArea">
+                <h2 class="student-name" id="profileName">Memuat...</h2>
+                <p class="student-id" id="profileNIS">NIS: -</p>
+            </div>
+
+            <div id="editArea" style="display: none; margin-bottom: 15px;">
+                <input type="text" id="inputEditName" class="edit-input" placeholder="Nama Lengkap">
+                <input type="text" id="inputEditNIS" class="edit-input" placeholder="Nomor Induk Siswa" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            </div>
+            
+            <p style="color: var(--accent-glow); font-weight: 600; font-size: 0.9rem; margin-bottom: 20px;"><i class="fas fa-medal"></i> Peringkat Kelas: 3</p>
+            
+            <button class="btn-edit" id="btnEditProfile">Edit Profil</button>
+            
+            <div style="margin-top: 2rem; border-top: 1px solid #E2E8F0; padding-top: 1.5rem;">
+                <a href="login.html" style="color: #EF4444; font-weight: 600; font-size: 0.9rem;"><i class="fas fa-sign-out-alt"></i> Keluar (Logout)</a>
+            </div>
+        </div>
+
+        <div class="stats-card">
+            <h3 class="stats-title">Jejak & Statistik Belajar</h3>
+            
+            <div class="stat-item">
+                <div class="stat-header">
+                    <span>Modul Diselesaikan</span>
+                    <span>1 dari 3 (33%)</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 33%; background: #10B981;"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-header">
+                    <span>Aktivitas Video</span>
+                    <span>45 Menit</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 60%; background: #3B82F6;"></div>
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-header">
+                    <span>Rata-rata Nilai Evaluasi</span>
+                    <span>77.5 / 100</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 77.5%; background: var(--accent-glow);"></div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2.5rem; background: #F8FAFC; padding: 1.5rem; border-radius: 12px; border: 1px dashed #CBD5E1;">
+                <h4 style="color: var(--primary-dark); font-family: 'Poppins'; margin-bottom: 10px; font-size: 1rem;"><i class="fas fa-award" style="color: var(--accent-glow);"></i> Pencapaian Terbaru</h4>
+                <p style="font-size: 0.9rem; color: #64748b;">Menyelesaikan "Pre-Test Bab 1" dengan nilai sangat baik.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const displayArea = document.getElementById('displayArea');
+            const editArea = document.getElementById('editArea');
+            const profileName = document.getElementById('profileName');
+            const profileNIS = document.getElementById('profileNIS');
+            const inputEditName = document.getElementById('inputEditName');
+            const inputEditNIS = document.getElementById('inputEditNIS');
+            const btnEditProfile = document.getElementById('btnEditProfile');
+
+            let isEditing = false; // Status apakah sedang dalam mode edit
+
+            // Fungsi untuk memuat data dari Local Storage ke layar
+            function loadDataToScreen() {
+                const storedName = localStorage.getItem('userName');
+                const storedNIS = localStorage.getItem('userNIS');
+                
+                profileName.innerText = storedName ? storedName : "Siswa (Belum Login)";
+                profileNIS.innerText = storedNIS ? `NIS: ${storedNIS}` : "NIS: -";
+            }
+
+            // Muat data pertama kali saat halaman dibuka
+            loadDataToScreen();
+
+            // Aksi ketika tombol Edit / Simpan diklik
+            btnEditProfile.addEventListener('click', () => {
+                if (!isEditing) {
+                    // MASUK KE MODE EDIT
+                    isEditing = true;
+                    btnEditProfile.innerText = "Simpan Perubahan";
+                    btnEditProfile.style.backgroundColor = "var(--accent-glow)";
+                    btnEditProfile.style.color = "var(--primary-dark)";
+                    btnEditProfile.style.borderColor = "var(--accent-glow)";
+                    
+                    // Sembunyikan teks biasa, tampilkan form input
+                    displayArea.style.display = "none";
+                    editArea.style.display = "block";
+                    
+                    // Isi form input dengan data yang ada saat ini
+                    inputEditName.value = localStorage.getItem('userName') || '';
+                    inputEditNIS.value = localStorage.getItem('userNIS') || '';
+                    
+                } else {
+                    // SIMPAN DATA KEMBALI
+                    isEditing = false;
+                    btnEditProfile.innerText = "Edit Profil";
+                    btnEditProfile.style.backgroundColor = "white";
+                    btnEditProfile.style.color = "var(--primary-dark)";
+                    btnEditProfile.style.borderColor = "var(--primary-dark)";
+                    
+                    // Ambil teks yang diketik pengguna
+                    const newName = inputEditName.value.trim();
+                    const newNIS = inputEditNIS.value.trim();
+                    
+                    // Simpan ke Local Storage jika tidak kosong
+                    if (newName) localStorage.setItem('userName', newName);
+                    if (newNIS) localStorage.setItem('userNIS', newNIS);
+                    
+                    // Kembalikan tampilan
+                    loadDataToScreen();
+                    displayArea.style.display = "block";
+                    editArea.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
