@@ -22,7 +22,7 @@
                 <div class="profil-avatar">
                     <i class="fas fa-user text-on-dark" style="font-size: 1.2rem;"></i>
                 </div>
-            </div>
+            </a>
         </header>
 
         <section class="banner">
@@ -109,12 +109,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mengambil nama yang disimpan dari halaman login
             const userName = localStorage.getItem('userName');
-            
-            // Jika nama ditemukan, ubah teks sapaan
             if (userName) {
-                // Mengambil kata pertama saja (misal "Budi Santoso" jadi "Budi")
                 const namaPanggilan = userName.split(' ')[0];
                 document.getElementById('greetingName').innerText = `Halo, ${namaPanggilan}!`;
             }
