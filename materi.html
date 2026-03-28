@@ -26,6 +26,10 @@
         .btn-read:hover { background: var(--accent-glow); color: var(--primary-dark); }
         .progress-container { width: 100%; background: #E2E8F0; border-radius: 10px; height: 8px; overflow: hidden; }
         .progress-bar { height: 100%; background: var(--accent-glow); }
+
+        /* Style untuk video embed di materi */
+        .materi-video-container { position: relative; width: 100%; padding-bottom: 56.25%; background-color: #000; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-subtle); margin-bottom: 2.5rem; border: 2px solid #E2E8F0; }
+        .materi-video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; outline: none; }
     </style>
 </head>
 <body style="background-color: var(--bg-light);">
@@ -36,8 +40,17 @@
     </header>
 
     <main class="page-content">
+        
+        <h3 style="font-family: 'Poppins'; color: var(--primary-dark); margin-bottom: 1rem;">Video Pengantar Materi</h3>
+        <div class="materi-video-container">
+            <video controls>
+                <source src="materi-persikos.mp4" type="video/mp4">
+                Maaf, browser Anda tidak mendukung pemutar video.
+            </video>
+        </div>
+
+        <h3 style="font-family: 'Poppins'; color: var(--primary-dark); margin-bottom: 1rem;">Daftar Modul Bacaan</h3>
         <div class="module-list">
-            
             <div class="module-card">
                 <div class="module-info">
                     <h3>Bab 1: Hakikat Konflik Sosial</h3>
@@ -84,7 +97,6 @@
                     <button class="btn-read" style="background: #CBD5E1; cursor: not-allowed;" disabled>Selesaikan Bab 2</button>
                 </div>
             </div>
-
         </div>
     </main>
 

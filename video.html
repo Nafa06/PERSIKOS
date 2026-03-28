@@ -14,40 +14,19 @@
         .back-btn:hover { color: var(--accent-glow); }
 
         .page-content { padding: 3rem 2rem; max-width: 1200px; margin: 0 auto; }
-
-        /* Tata letak Grid: Video Utama Kiri, Playlist Kanan */
         .video-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
         @media (max-width: 992px) { .video-layout { grid-template-columns: 1fr; } }
-
         .main-video-section { display: flex; flex-direction: column; gap: 20px; }
 
-        /* Wadah Pemutar Video (Otomatis 16:9) */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Rasio 16:9 */
-            background-color: #000;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-premium);
-        }
-        
-        .video-container video, .video-container iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: none;
-            outline: none;
-        }
+        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; background-color: #000; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-premium); }
+        .video-container video, .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; outline: none; }
 
-        /* Informasi Video di Bawah Player */
         .video-info { background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow-subtle); border: 1px solid #E2E8F0; }
         .video-title { font-family: 'Poppins', sans-serif; font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 10px; }
         .video-meta { display: flex; gap: 15px; color: #64748b; font-size: 0.9rem; margin-bottom: 15px; font-weight: 500; }
         .video-desc { color: #475569; line-height: 1.7; font-size: 0.95rem; }
         .badge { background: #EEF2FF; color: #4F46E5; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; }
 
-        /* Daftar Playlist di Kanan */
         .playlist-section { background: white; border-radius: 16px; box-shadow: var(--shadow-subtle); border: 1px solid #E2E8F0; overflow: hidden; display: flex; flex-direction: column; max-height: 650px; }
         .playlist-header { background: var(--primary-dark); color: white; padding: 1.5rem; font-family: 'Poppins', sans-serif; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center;}
         .playlist-list { padding: 1rem; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
@@ -56,8 +35,7 @@
         .playlist-item:hover { background: #F8FAFC; border-color: #E2E8F0; }
         .playlist-item.active { background: #FFF7ED; border-left: 4px solid var(--accent-glow); border-color: #FFEDD5; }
 
-        /* Thumbnail (Gambar Kotak Kecil di Kanan) */
-        .playlist-thumb { width: 120px; height: 68px; background: #CBD5E1; border-radius: 8px; flex-shrink: 0; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; color: white; background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400&auto=format&fit=crop'); background-size: cover; background-position: center;}
+        .playlist-thumb { width: 120px; height: 68px; background: #CBD5E1; border-radius: 8px; flex-shrink: 0; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; color: white; background-size: cover; background-position: center;}
         .playlist-thumb::after { content: '▶'; position: absolute; background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; }
         
         .playlist-details { display: flex; flex-direction: column; justify-content: center; }
@@ -78,26 +56,24 @@
             <div class="main-video-section">
                 
                 <div class="video-container">
-                    <video controls poster="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1000&auto=format&fit=crop">
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <video id="mainVideoPlayer" controls>
+                        <source id="mainVideoSource" src="konflik-sosial.mp4" type="video/mp4">
                         Maaf, browser Anda tidak mendukung pemutar video HTML5.
                     </video>
                 </div>
 
                 <div class="video-info">
-                    <span class="badge">Bab 1</span>
-                    <h1 class="video-title" style="margin-top: 10px;">Pengantar: Hakikat dan Dinamika Konflik Sosial</h1>
+                    <span class="badge">Eksklusif</span>
+                    <h1 class="video-title" id="mainVideoTitle" style="margin-top: 10px;">Konflik Sosial: Pemecah Harmoni dalam Keberagaman</h1>
                     
                     <div class="video-meta">
-                        <span><i class="far fa-clock"></i> 15:42 Menit</span>
-                        <span><i class="far fa-eye"></i> Ditonton 1.2K kali</span>
-                        <span><i class="far fa-calendar-alt"></i> Dipublikasikan 18 Mar 2026</span>
+                        <span><i class="far fa-play-circle"></i> PERSIKOS Original</span>
                     </div>
                     
                     <hr style="border: 0; border-top: 1px solid #E2E8F0; margin: 20px 0;">
                     
-                    <p class="video-desc">
-                        Dalam video pengantar ini, kita akan membahas definisi dasar konflik sosial dari kacamata sosiologi. Mengapa masyarakat yang beragam sangat rentan terhadap pergesekan? Apa saja faktor utama pemicunya? Simak penjelasan selengkapnya untuk memahami akar masalah pertikaian di masyarakat.
+                    <p class="video-desc" id="mainVideoDesc">
+                        Dalam video dokumenter ini, kita akan melihat bagaimana rentetan peristiwa kelam di masa lalu menjadi bukti nyata bahwa konflik sosial dapat memecah belah keharmonisan bangsa. Mari pelajari sejarah agar kita tidak mengulangi kesalahan yang sama.
                     </p>
                 </div>
             </div>
@@ -105,38 +81,30 @@
             <div class="playlist-section">
                 <div class="playlist-header">
                     <span>Materi Tersedia</span>
-                    <span style="font-size: 0.8rem; font-weight: normal; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px;">1 / 4 Selesai</span>
+                    <span style="font-size: 0.8rem; font-weight: normal; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px;">2 Video</span>
                 </div>
                 
                 <div class="playlist-list">
-                    <a href="#" class="playlist-item active">
+                    <a href="#" class="playlist-item active" onclick="gantiVideo(event, this, 'konflik-sosial.mp4', 'Konflik Sosial: Pemecah Harmoni dalam Keberagaman', 'Dalam video dokumenter ini, kita akan melihat bagaimana rentetan peristiwa kelam di masa lalu menjadi bukti nyata bahwa konflik sosial dapat memecah belah keharmonisan bangsa. Mari pelajari sejarah agar kita tidak mengulangi kesalahan yang sama.')">
                         <div class="playlist-thumb" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="playlist-details">
-                            <h3 class="playlist-title">Pengantar: Hakikat Konflik Sosial</h3>
+                            <h3 class="playlist-title">Konflik Sosial: Pemecah Harmoni</h3>
                             <span class="playlist-duration"><i class="fas fa-play-circle" style="color: var(--accent-glow);"></i> Sedang diputar</span>
                         </div>
                     </a>
 
-                    <a href="#" class="playlist-item">
+                    <a href="#" class="playlist-item" onclick="gantiVideo(event, this, 'materi-persikos.mp4', 'Harmoni Dalam Keberagaman', 'Penjelasan komprehensif dari PERSIKOS mengenai pentingnya menjaga harmoni di tengah-tengah keberagaman suku, agama, dan budaya di Indonesia.')">
                         <div class="playlist-thumb" style="background-image: url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="playlist-details">
-                            <h3 class="playlist-title">Studi Kasus: Konflik Etnis di Indonesia</h3>
-                            <span class="playlist-duration">22:15 Menit</span>
-                        </div>
-                    </a>
-
-                    <a href="#" class="playlist-item">
-                        <div class="playlist-thumb" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=400&auto=format&fit=crop');"></div>
-                        <div class="playlist-details">
-                            <h3 class="playlist-title">Manajemen dan Resolusi Perdamaian</h3>
-                            <span class="playlist-duration">18:30 Menit</span>
+                            <h3 class="playlist-title">Materi: Harmoni Dalam Keberagaman</h3>
+                            <span class="playlist-duration">Klik untuk memutar</span>
                         </div>
                     </a>
 
                     <div class="playlist-item" style="opacity: 0.6; cursor: not-allowed;">
                         <div class="playlist-thumb" style="background: #E2E8F0;"><i class="fas fa-lock" style="color: #94A3B8;"></i></div>
                         <div class="playlist-details">
-                            <h3 class="playlist-title">Ulasan Akhir & Integrasi Sosial</h3>
+                            <h3 class="playlist-title">Evaluasi Akhir</h3>
                             <span class="playlist-duration">Segera Hadir</span>
                         </div>
                     </div>
@@ -146,5 +114,36 @@
         </div>
     </main>
 
+    <script>
+        function gantiVideo(event, elemen, srcVideo, judul, deskripsi) {
+            event.preventDefault(); // Mencegah layar lompat ke atas
+
+            // 1. Ganti source dan putar video
+            const player = document.getElementById('mainVideoPlayer');
+            const source = document.getElementById('mainVideoSource');
+            source.src = srcVideo;
+            player.load(); // Refresh player
+            player.play(); // Putar otomatis
+
+            // 2. Ganti teks info
+            document.getElementById('mainVideoTitle').innerText = judul;
+            document.getElementById('mainVideoDesc').innerText = deskripsi;
+
+            // 3. Ubah warna tombol playlist (Hilangkan yang aktif sebelumnya)
+            const semuaItem = document.querySelectorAll('.playlist-item');
+            semuaItem.forEach(item => {
+                item.classList.remove('active');
+                // Kembalikan teks jadi "Klik untuk memutar"
+                const durasi = item.querySelector('.playlist-duration');
+                if (durasi && durasi.innerText.includes('Sedang diputar')) {
+                    durasi.innerText = 'Klik untuk memutar';
+                }
+            });
+
+            // 4. Jadikan tombol yang diklik menjadi aktif
+            elemen.classList.add('active');
+            elemen.querySelector('.playlist-duration').innerHTML = '<i class="fas fa-play-circle" style="color: var(--accent-glow);"></i> Sedang diputar';
+        }
+    </script>
 </body>
 </html>
