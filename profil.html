@@ -57,7 +57,7 @@
 
             <div id="editArea" style="display: none; margin-bottom: 15px;">
                 <input type="text" id="inputEditName" class="edit-input" placeholder="Nama Lengkap">
-                <input type="text" id="inputEditNIS" class="edit-input" placeholder="Nomor Induk Siswa" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                <input type="text" id="inputEditNIS" class="edit-input" placeholder="Nomor Absen" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             </div>
             
             <p style="color: var(--accent-glow); font-weight: 600; font-size: 0.9rem; margin-bottom: 20px;"><i class="fas fa-medal"></i> Peringkat Kelas: 3</p>
@@ -127,7 +127,7 @@
                 const storedNIS = localStorage.getItem('userNIS');
                 
                 profileName.innerText = storedName ? storedName : "Siswa (Belum Login)";
-                profileNIS.innerText = storedNIS ? `NIS: ${storedNIS}` : "NIS: -";
+                profileNIS.innerText = storedNIS ? `No Absen: ${storedNIS}` : "No Absen: -";
             }
 
             // Muat data pertama kali saat halaman dibuka
